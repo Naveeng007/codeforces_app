@@ -4,6 +4,7 @@ const app = express();
 const get_data = require('./utils/cf_api.js')
 var fs = require('fs')
 
+const port=process.env.PORT||3000
 const hbs = require('hbs')
 //setup path config
 const publicDirectory = path.join(__dirname, '../public')
@@ -107,6 +108,6 @@ app.get('*', (req, res) => {
     res.send('404 page')
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("app is listening...")
 })
