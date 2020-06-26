@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>friends</title>
+  
+ 
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  
+  <!-- Google Tag Manager -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+  
+      
+  
+    
+  
+  
+
+
+  
+
+
+     <script type="text/javascript" >
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+       
+        var graph1 = new Array ( );
+        graph1[0] = new Array ( 'String', 'Maths', 'greedy', 'dp',
+        'Graph', 'misc' );
+        var temp=['Hello']+[1,3]
+        console.log(temp)
+       
+      //  var graph={{val.g1}}
+       // console.log(g1);
+       var ag1=Array({{g1.a1}})
+       console.log(ag1)
+        graph1[1]=new Array('<1100',ag1[0],ag1[1],ag1[2],ag1[3],ag1[4]);
+        graph1[2]=new Array('1100-1500',ag1[5],ag1[6],ag1[7],ag1[8],ag1[9])
+        graph1[3]=new Array('1600-2000',ag1[10],ag1[11],ag1[12],ag1[13],ag1[14])
+        graph1[4]=new Array('>2100',ag1[15],ag1[16],ag1[17],ag1[18],ag1[19])
+    //    graph1[2]=new Array('1100-1500',ag2[0],ag2[1],ag2[3],ag1[4],ag2[5]);
+       // graph1[3]=new Array('1600-2000',ag3[0],ag3[1],ag3[3],ag3[4],ag3[5]);
+      //  graph1[4]=new Array('>2100',ag4[0],ag4[1],ag4[3],ag4[4],ag4[5]);
+       
+       
+     // var graph= JSON.parse(gr)
+     // var g1=graph.g1;
+      // var fs=require('fs')
+       var g1=graph1;
+      // g1=JSON.parse(g1)
+      console.log(g1)
+        var data = google.visualization.arrayToDataTable(g1);
+
+        var options = {
+        //  title: 'Number of problems solved ',
+          legend: { position: 'none' },
+          hAxis: {title: 'Ratings of problems'},
+        vAxis: {title: 'Number of Problems solved'},
+         // isStacked: true,
+          is3D:true
+         
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script> 
+
+   
+    
+     <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart1);
+
+      function drawChart1() {
+        var ag2=Array({{g1.a2}})
+        var graph1=new Array()
+        graph1[0]=new Array("Name","Frequency");
+        graph1[1]=new Array("Maths",ag2[0])
+        graph1[2]=new Array("Greedy",ag2[1])
+        graph1[3]=new Array("DP",ag2[2])
+        graph1[4]=new Array("Graph",ag2[3])
+        graph1[5]=new Array("Misc",ag2[4])
+      //  console.log(g2)
+      var g2=graph1;
+        console.log(g2)
+        var data = google.visualization.arrayToDataTable(g2);
+
+        var options = {
+       //   title: 'Topic wise Problems solved',
+         
+          is3D:true
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+ 
+
+</head>
+
+<body>
+
+  <div class="main-content" id="panel">
+    <!-- Topnav -->
+    
+    <nav class="navbar navbar-top navbar-expand ">
+      <div class="container-fluid">
+        
+      </div>
+    </nav>
+    <!-- Header -->
+    <!-- Header -->
+   
+    <!-- Page content -->
+    <div class="container-fluid ">
+      <div class="row">
+        <!-- Right side -->
+        <div class="col-xl-4 order-xl-2">
+          <!-- first card -->
+          <div class="card card-profile">
+           
+            
+            <div class="card-header" style="align-content: center;"><h1  >{{handle}}</h5></div>
+            <div class="card-body pt-0">
+                
+              <div class="row">
+                <div class="col">
+                  
+                  <div class="card-profile-stats d-flex justify-content-center">
+                    
+                    <div>
+                      <span class="heading">{{solved}}</span>
+                      <span class="description">Solved</span>
+                    </div>
+                    
+                    <div>
+                      <span class="heading">{{rating}}</span>
+                      <span class="description">Cur Ratings</span>
+                    </div>
+                    <div>
+                      <span class="heading">{{max}}</span>
+                      <span class="description">Max Ratings</span>
+                    </div>
+                   
+                  </div>
+                  
+                </div>
+                
+                
+              </div>
+              
+              
+            </div>
+          </div>
+
+          <!-- friend card -->
+          <div class="card card-profile">
+            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Search Handles</div>
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+               
+              </div>
+            </div>
+            
+            <div class="card-body pt-0">
+                
+              <div class="row">
+                <div class="col">
+                  
+                  <!-- <div class="card-profile-stats d-flex justify-content-center">
+                    
+                    <div>
+                      <span class="heading">22</span>
+                      <span class="description">Solved</span>
+                    </div>
+                    
+                    <div>
+                      <span class="heading">1550</span>
+                      <span class="description">Cur Ratings</span>
+                    </div>
+                    <div>
+                      <span class="heading">1550</span>
+                      <span class="description">Max Ratings</span>
+                    </div>
+                   
+                  </div> -->
+                  <div class="text-lg-left">
+                    <!-- <h5 class="h3">
+                      Naveen<span class="font-weight-light"></span>
+                    </h5>
+                    <h5 class="h3">
+                      Rahul<span class="font-weight-light"></span>
+                    </h5> -->
+                    {{!-- <ul style="font-size: 30px;">
+                      
+                      <li  ><a href="#" style="color: blueviolet;">Rahul</a></li>
+                      <li  ><a href="#" style="color: rgb(43, 70, 226);">Naveen</a></li>
+                      <li  ><a href="#" style="color: rgb(76, 43, 226);">Pranjal</a></li>
+                      <li  ><a href="#" style="color: rgb(43, 226, 165);">Umang</a></li>
+                      
+                        
+                    </ul> --}}
+                    <form>
+                      <input placeholder="handle name">
+                      <button>search  </button>
+                    </form>
+                     
+                    
+                    
+                  </div>
+                </div>
+                
+                
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dashboard -->
+        <div class="col-xl-8 order-xl-1">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Your Profile Analytics </h3>
+                </div>
+                {{!-- <div class="col-4 text-right">
+                  <a href="#!" class="btn btn-sm btn-primary">Dashboard</a>
+                </div> --}}
+              </div>
+            </div>
+            <div class="card-body">
+              <form>
+                {{!-- <div class="card mb-6">
+                  <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Ratings Graph</div>
+                  <div id="curve_chart" style="width: 100%; height: 500px"></div>
+    
+                </div> --}}
+              
+              
+                <div class="card mb-6">
+                    
+                    <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Rating wise problems solved </div>
+
+                  <div id="chart_div" ><canvas id="myAreaChart" width="100%" height="500%"></canvas></div>
+    
+                </div>
+              
+
+                <div class="card mb-6">
+
+                <div class="card-header"><i class="fas fa-chart-area mr-1"></i>percentage of topics Solved</div>
+                <div id="piechart" style="width: 100%; height: 500px;"></div>
+  
+                </div>
+                <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
+                
+                
+                <hr class="my-4" />
+                <!-- Address -->
+                
+                
+                
+              </form>
+            </div>
+          </div>
+          
+          
+          
+
+        </div>
+        
+
+      </div>
+      <!-- Footer -->
+      <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6">
+            <div class="copyright text-center  text-lg-left  text-muted">
+             <strong>NOTE:</strong> Each Problems may have more than one tags
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              
+             
+              <li class="nav-item">
+                <a href="https://www.linkedin.com/in/naveenkumar160/" class="nav-link" target="_blank"> LinkedIn Profile:Naveen Kumar</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+ 
+ <script src="js/searchbar.js"></script>
+  
+  
+</body>
+
+</html>
