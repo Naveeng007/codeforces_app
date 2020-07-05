@@ -1,19 +1,4 @@
-
-<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+{{!-- soon to be modified and added.......................... --}}
 <!DOCTYPE html>
 <html>
 
@@ -23,115 +8,20 @@
   
  
   <link rel="stylesheet" href="css/style.css" type="text/css">
-  <!-- Google Tag Manager -->
-  <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+
       
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-  <!-- Graph 1 Tree -->
+  <!-- Graph 1 Ratings -->
   
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['String', 'Graph', 'Dp', 'Greedy', 'devide and conquer',
-         'Maths', 'misc' ],
-        ['500-1000', 10, 24, 20, 32, 18, 5],
-        ['1100-1500', 16, 22, 23, 30, 16, 9],
-        ['1500-2000', 28, 19, 29, 30, 12, 13]]);
-
-        var options = {
-          title: 'Lengths of dinosaurs, in meters',
-          legend: { position: 'none' },
-         
-          isStacked: true,
-         
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
+   
 
     <!-- graph 2 -->
     
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['treemap']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
-          ['Global',    null,                 0,                               0],
-          ['America',   'Global',             0,                               0],
-          ['Europe',    'Global',             0,                               0],
-          ['Asia',      'Global',             0,                               0],
-          ['Australia', 'Global',             0,                               0],
-          ['Africa',    'Global',             0,                               0],
-          ['Brazil',    'America',            11,                              10],
-          ['USA',       'America',            52,                              31],
-          ['Mexico',    'America',            24,                              12],
-          ['Canada',    'America',            16,                              -23],
-          ['France',    'Europe',             42,                              -11],
-          ['Germany',   'Europe',             31,                              -2],
-          ['Sweden',    'Europe',             22,                              -13],
-          ['Italy',     'Europe',             17,                              4],
-          ['UK',        'Europe',             21,                              -5],
-          ['China',     'Asia',               36,                              4],
-          ['Japan',     'Asia',               20,                              -12],
-          ['India',     'Asia',               40,                              63],
-          ['Laos',      'Asia',               4,                               34],
-          ['Mongolia',  'Asia',               1,                               -5],
-          ['Israel',    'Asia',               12,                              24],
-          ['Iran',      'Asia',               18,                              13],
-          ['Pakistan',  'Asia',               11,                              -52],
-          ['Egypt',     'Africa',             21,                              0],
-          ['S. Africa', 'Africa',             30,                              43],
-          ['Sudan',     'Africa',             12,                              2],
-          ['Congo',     'Africa',             10,                              12],
-          ['Zaire',     'Africa',             8,                               10]
-        ]);
-
-        tree = new google.visualization.TreeMap(document.getElementById('chart_div1'));
-
-        tree.draw(data, {
-          minColor: '#f00',
-          midColor: '#ddd',
-          maxColor: '#0d0',
-          headerHeight: 15,
-          fontColor: 'black',
-          showScale: true
-        });
-
-      }
-    </script>
 
     <!-- graph 3 -->
 
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales'],
-          ['2004',  1000  ],
-          ['2005',  1170      ],
-          ['2006',  660      ],
-          ['2007',  1030      ]
-        ]);
-
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
-    </script>
+ 
 </head>
 
 <body>
@@ -315,31 +205,7 @@
 
       </div>
       <!-- Footer -->
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6">
-            <div class="copyright text-center  text-lg-left  text-muted">
-              &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+     
     </div>
   </div>
  
