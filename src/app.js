@@ -21,17 +21,19 @@ app.use(express.static(publicDirectory));//for serving static things such as js,
 
 app.get('', (req, res) => {//default page
     var handle = req.query.handle;//when open page it must be with query of any handle
-    console.log(handle);
-    if (!handle) {
-        return res.send({
-            error: "May be handle field is empty or Net is not connected"
-        })
+ //   console.log(handle);
+    if (!handle) {//initially it will go here as no handle provided
+      return  res.render("profile") //this is dashboard where we will type handle
+        // return res.send({
+        //     error: "May be handle field is empty or Net is not connected"
+        // })
     }
     get_data(handle, (error, data) => {
         console.log(error);
         if (error != "Fine") {
             return res.send({
-                error: "you must provide valid handle"
+                error: error,
+                data:data
             })
         }
   

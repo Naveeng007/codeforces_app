@@ -6,7 +6,7 @@ const url="https://codeforces.com/api/user.status?handle="+valued+"&from=1";
 request({url:url,json:true},(error,response)=>{
     if(error)
     {
-        callback("Wifi Recharge krwa",'kuch bhi nhi')
+        callback("Wifi Recharge krwalo",'kuch bhi nhi')
     }
     else if(response.body.status!=="OK")
     {

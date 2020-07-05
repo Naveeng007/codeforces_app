@@ -1,216 +1,40 @@
-{{!-- soon to be modified and added.......................... --}}
+{{!-- page currently in work --}}
+
 <!DOCTYPE html>
 <html>
 
 <head>
-  
-  <title>My Profile</title>
-  
- 
+
+  <title>Dashboard</title>
+
+
   <link rel="stylesheet" href="css/style.css" type="text/css">
 
-      
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-  <!-- Graph 1 Ratings -->
-  
-   
-
-    <!-- graph 2 -->
-    
-
-    <!-- graph 3 -->
-
- 
 </head>
-
-<body>
-
-  <div class="main-content" id="panel">
-    <!-- Topnav -->
-    
-    <nav class="navbar navbar-top navbar-expand ">
-      <div class="container-fluid">
-        
+{{!-- background color set to black --}}
+<body class="bg-dark"  >
+       
+  <div class="container-fluid" >
+      <div class="row justify-content-center">
+          <div class="col-lg-5">
+              <div class="card shadow-lg border-0 rounded-lg mt-8">
+                  <div class="card-header"><h3 class="text-center ">Search Codeforces Handle</h3></div>
+                  <div class="card-body">
+                        <form>
+                          <input placeholder="tourist">
+                          <button>search </button>
+                      </form>
+                  </div>
+                  
+              </div>
+          </div>
       </div>
-    </nav>
-    <!-- Header -->
-    <!-- Header -->
-   
-    <!-- Page content -->
-    <div class="container-fluid ">
-      <div class="row">
-        <!-- Right side -->
-        <div class="col-xl-4 order-xl-2">
-          <!-- first card -->
-          <div class="card card-profile">
-           
-            
-            <div class="card-header" style="align-content: center;"><h4 style="color: blueviolet;" >Nuclear</h5></div>
-            <div class="card-body pt-0">
-                
-              <div class="row">
-                <div class="col">
-                  
-                  <div class="card-profile-stats d-flex justify-content-center">
-                    
-                    <div>
-                      <span class="heading">22</span>
-                      <span class="description">Solved</span>
-                    </div>
-                    
-                    <div>
-                      <span class="heading">1550</span>
-                      <span class="description">Cur Ratings</span>
-                    </div>
-                    <div>
-                      <span class="heading">1550</span>
-                      <span class="description">Max Ratings</span>
-                    </div>
-                   
-                  </div>
-                  
-                </div>
-                
-                
-              </div>
-              
-              
-            </div>
-          </div>
-
-          <!-- friend card -->
-          <div class="card card-profile">
-            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Frinds</div>
-            <div class="row justify-content-center">
-              <div class="col-lg-3 order-lg-2">
-               
-              </div>
-            </div>
-            
-            <div class="card-body pt-0">
-                
-              <div class="row">
-                <div class="col">
-                  
-                  <!-- <div class="card-profile-stats d-flex justify-content-center">
-                    
-                    <div>
-                      <span class="heading">22</span>
-                      <span class="description">Solved</span>
-                    </div>
-                    
-                    <div>
-                      <span class="heading">1550</span>
-                      <span class="description">Cur Ratings</span>
-                    </div>
-                    <div>
-                      <span class="heading">1550</span>
-                      <span class="description">Max Ratings</span>
-                    </div>
-                   
-                  </div> -->
-                  <div class="text-lg-left">
-                    <!-- <h5 class="h3">
-                      Naveen<span class="font-weight-light"></span>
-                    </h5>
-                    <h5 class="h3">
-                      Rahul<span class="font-weight-light"></span>
-                    </h5> -->
-                    <ul style="font-size: 30px;">
-                      
-                      <li  ><a href="#" style="color: blueviolet;">Rahul</a></li>
-                      <li  ><a href="#" style="color: rgb(43, 70, 226);">Naveen</a></li>
-                      <li  ><a href="#" style="color: rgb(76, 43, 226);">Pranjal</a></li>
-                      <li  ><a href="#" style="color: rgb(43, 226, 165);">Umang</a></li>
-                      
-                        
-                    </ul>
-                     
-                    
-                    
-                  </div>
-                </div>
-                
-                
-              </div>
-              
-              
-            </div>
-          </div>
-        </div>
-        
-        <!-- Dashboard -->
-        <div class="col-xl-8 order-xl-1">
-          <div class="card">
-            <div class="card-header">
-              <div class="row align-items-center">
-                <div class="col-8">
-                  <h3 class="mb-0">Edit profile </h3>
-                </div>
-                <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Dashboard</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <form>
-                <div class="card mb-6">
-                  <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Ratings Graph</div>
-                  <div id="curve_chart" style="width: 100%; height: 500px"></div>
-    
-                </div>
-              
-              
-                <div class="card mb-6">
-                    
-                    <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Ratings Graph</div>
-
-                  <div id="chart_div" ><canvas id="myAreaChart" width="100%" height="500%"></canvas></div>
-    
-                </div>
-              
-
-                <div class="card mb-6">
-
-                <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Tree Graph</div>
-                <div id="chart_div1" style="width: 100%; height: 500px;"></div>
-  
-                </div>
-                <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
-                
-                
-                <hr class="my-4" />
-                <!-- Address -->
-                
-                
-                <hr class="my-4" />
-                <!-- Description -->
-                <h6 class="heading-small text-muted mb-4">About me</h6>
-                <div class="pl-lg-4">
-                  <div class="form-group">
-                    <label class="form-control-label">About Me</label>
-                    <textarea rows="4" class="form-control" placeholder="A few words about you ...">I love to code </textarea>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          
-          
-          
-
-        </div>
-        
-
-      </div>
-      <!-- Footer -->
-     
-    </div>
   </div>
- 
-  
-  
-</body>
+               
+       
+        <script src="js/searchbar.js"></script>
+
+    </body>
 
 </html>
