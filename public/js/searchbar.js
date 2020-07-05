@@ -7,4 +7,6 @@ handle.addEventListener('submit', (e) => {
     console.log("Loading...")
     window.history.pushState('page2', 'Title', '/?handle='+srch);//provides an interface for manipulating the browser session history
     location.reload();//for reloading or refreshing after pushing the page
+
+    //this page get pushed and when this file is reloaded it opens this file with another handle
 })
