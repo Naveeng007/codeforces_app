@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>friends</title>
+  <title>Profel Analytics</title>
 
 
   <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -97,7 +97,15 @@
 
     <nav class="navbar navbar-top navbar-expand ">
       <div class="container-fluid">
-
+          <div class="col-0 text-right">
+                  <a href="https://www.linkedin.com/in/naveenkumar160/" class="btn btn-sm btn-primary">LinkedIn</a>
+                  <a href="https://github.com/Naveeng007/codeforces_app" class="btn btn-sm btn-primary">Github</a>
+            </div>
+      </div>
+      <div class="container-fluid">
+          <div class="col-0 text-right">
+                  
+            </div>
       </div>
     </nav>
     <!-- Header -->
@@ -113,7 +121,7 @@
 
 
             <div class="card-header" style="align-content: center;">
-              <h1>{{handle}}</h5>
+              <h1 >{{handle}} </h5>
             </div>
             <div class="card-body pt-0">
 
@@ -149,7 +157,7 @@
 
           <!-- friend card -->
           <div class="card card-profile">
-            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Enter codeforces Handle</div>
+            <div class="card-header"><i class="fas fa-chart-area mr-1"></i><strong>Enter codeforces Handle</strong></div>
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
 
@@ -164,7 +172,7 @@
                   <div class="text-lg-left">
 
                     <form>
-                      <input placeholder="tourist">
+                      <input placeholder="Ex:tourist">
                       <button>search </button>
                     </form>
 
@@ -187,10 +195,10 @@
             <div class="card-header">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Your Profile Analytics </h3>
+                  <h3 class="mb-0">{{handle}}'s Profile Analytics </h3>
                 </div>
                 {{!-- <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Dashboard</a>
+                  <a href="/profile" class="btn btn-sm btn-primary">Dashboard</a>
                 </div> --}}
               </div>
             </div>
@@ -240,17 +248,7 @@
               <strong>NOTE:</strong> Each Problems may have more than one tags
             </div>
           </div>
-          <div class="col-lg-6">
-            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-
-
-              <li class="nav-item">
-                <a href="https://www.linkedin.com/in/naveenkumar160/" class="nav-link" target="_blank"> LinkedIn
-                  Profile:Naveen Kumar</a>
-              </li>
-
-            </ul>
-          </div>
+         
         </div>
       </footer>
     </div>

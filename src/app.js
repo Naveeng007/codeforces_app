@@ -43,12 +43,14 @@ app.get('', (req, res) => {//default page
       //object1 contains profile data
         console.log(data.object2.g1)
         //     console.log(data.object2.g1);
+        var col="color: blue;";
         var val = {
 
             handle: data.object1.handle,
             max: data.object1.maxrating,
             rating: data.object1.rating,
             solved: data.object2.total,
+            color:col,
             
             g1: {
                 a1: data.object2.g1,
