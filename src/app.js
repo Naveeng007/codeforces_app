@@ -50,7 +50,7 @@ app.get('', (req, res) => {//default page
             max: data.object1.maxrating,
             rating: data.object1.rating,
             solved: data.object2.total,
-            color:col,
+            
             
             g1: {
                 a1: data.object2.g1,
