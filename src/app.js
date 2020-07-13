@@ -43,7 +43,7 @@ app.get('', (req, res) => {//default page
       //object1 contains profile data
         console.log(data.object2.g1)
         //     console.log(data.object2.g1);
-        var col="color: blue;";
+        
         var val = {
 
             handle: data.object1.handle,
