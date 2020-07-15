@@ -59,7 +59,8 @@
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart1);
-
+  var pa={{problem_type.a}}
+  console.log(pa)
     function drawChart1() {
       var ag2 = Array({{ g1.a2 }})
     var graph1 = new Array()
@@ -76,8 +77,8 @@
 
     var options = {
       //   title: 'Topic wise Problems solved',
-
-      is3D: true
+     
+      //is3D: true
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -85,6 +86,112 @@
     chart.draw(data, options);
       }
   </script>
+
+
+  {{!-- .........error type.......... --}}
+
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart1);
+
+    function drawChart1() {
+      //var ag2 = Array({{ g1.a2 }})
+    var graph1 = new Array()
+    graph1[0] = new Array("Name", "Error");
+    graph1[1] = new Array("Wrong Answer", {{error_type.wa}})
+    graph1[2] = new Array("TLE", {{error_type.tle}})
+    graph1[3] = new Array("AC", {{error_type.ac}})
+    graph1[4] = new Array("Compilation error", {{error_type.ce}})
+    graph1[5] = new Array("Runtime Error", {{error_type.re}})
+    graph1[6] = new Array("Other", {{error_type.oth}})
+    //  console.log(g2)
+    var g2 = graph1;
+    console.log(g2)
+    var data = google.visualization.arrayToDataTable(g2);
+
+    var options = {
+      //   title: 'Topic wise Problems solved',
+    pieHole: 0.4,
+    //  is3D: true
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('error_type'));
+
+    chart.draw(data, options);
+      }
+  </script>
+{{!-- .......................................... --}}
+
+
+  {{!-- Problem Type --}}
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart1);
+
+    function drawChart1() {
+      var ag2 = Array({{ g1.a2 }})
+    var graph1 = new Array()
+    graph1[0] = new Array("Name", "Problem",{ role: 'style' });
+    graph1[1] = new Array("Problem A", {{problem_type.a}},'#ff7a7a')
+    graph1[2] = new Array("Problem B", {{problem_type.b}},'#eed853')
+    graph1[3] = new Array("Problem C", {{problem_type.c}},'#4acec4')
+    graph1[4] = new Array("Problem D", {{problem_type.d}},'#91eabb')
+    graph1[5] = new Array("Problem E", {{problem_type.e}},'#b87333')
+    graph1[6] = new Array("Problem F", {{problem_type.f}},'#bf1f2e')
+    graph1[7] = new Array("Problem G", {{problem_type.g}},'Pink')
+    graph1[7] = new Array("Problem H", {{problem_type.h}},'Red')
+    //  console.log(g2)
+    var g2 = graph1;
+    console.log(g2)
+    var data = google.visualization.arrayToDataTable(g2);
+
+    var options = {
+      //   title: 'Topic wise Problems solved',
+   legend: { position: 'none' },
+      hAxis: { title: 'Problem Type' },
+      vAxis: { title: 'Number of Problems solved' },
+      //is3D: true
+    };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('problem_type'));
+
+    chart.draw(data, options);
+      }
+  
+  </script>
+  
+  {{!-- .................................. --}}
+
+  {{!-- solve_type --}}
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart1);
+
+    function drawChart1() {
+      var ag2 = Array({{ g1.a2 }})
+    var graph1 = new Array()
+    graph1[0] = new Array("Name", "Solved Questions Type");
+    graph1[1] = new Array("During Contest", {{solve_type.contest}})
+    graph1[2] = new Array("Practiced after contest", {{solve_type.practice}})
+   
+    //  console.log(g2)
+    var g2 = graph1;
+    console.log(g2)
+    var data = google.visualization.arrayToDataTable(g2);
+
+    var options = {
+      //   title: 'Topic wise Problems solved',
+
+      is3D: true
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('solve_type'));
+
+    chart.draw(data, options);
+      }
+  </script>
+
+  {{!-- ........................... --}}
 
 
 
@@ -121,7 +228,7 @@
 
 
             <div class="card-header" style="align-content: center;">
-              <h1 >{{handle}} </h5>
+              <h1 >{{handle}}{{col}} </h5>
             </div>
             <div class="card-body pt-0">
 
@@ -167,7 +274,7 @@
             <div class="card-body pt-0">
 
               <div class="row">
-                <div class="col">
+                <div class="col justify-content-center">
 
                   <div class="text-lg-left">
 
@@ -187,6 +294,47 @@
 
             </div>
           </div>
+          
+
+          {{!-- .................................... --}}
+           <div class="card card-profile">
+            <div class="card-header"><i class="fas fa-chart-area mr-1"></i><strong>Other Informations</strong></div>
+            <div class="row ">
+              <div class="col">
+              
+
+            <p id="demo"></p>
+              </div>
+            </div>
+
+           <div class="card-body pt-0">
+
+              <div class="row">
+                <div class="col">
+
+                  <div class="text-lg-left">
+
+                      <div class="card mb-6">
+
+                  <div class="card-header"><i class="fas fa-chart-area mr-1"></i>solved Type</div>
+                  <div id="solve_type" style="width: 100%; height: 100%;"></div>
+
+                </div>
+
+
+
+
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div> 
+          </div>
+
+          {{!-- ?......................... --}}
         </div>
 
         <!-- Dashboard -->
@@ -215,6 +363,19 @@
 
                 </div>
 
+                <div class="card mb-6">
+
+                  <div class="card-header"><i class="fas fa-chart-area mr-1"></i>problem_type</div>
+                  <div id="problem_type" style="width: 100%; height: 500px;"></div>
+
+                </div>
+
+                <div class="card mb-6">
+
+                  <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Error Type</div>
+                  <div id="error_type" style="width: 100%; height: 500px;"></div>
+
+                </div>
 
                 <div class="card mb-6">
 
@@ -222,6 +383,12 @@
                   <div id="piechart" style="width: 100%; height: 500px;"></div>
 
                 </div>
+
+                 
+
+                 
+
+                 
 
 
 
@@ -256,6 +423,7 @@
 
   <script src="js/searchbar.js"></script>
 
+  
 
 </body>
 

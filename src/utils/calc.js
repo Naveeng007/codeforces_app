@@ -4,6 +4,11 @@ calc=(data)=>{
   var i;
   console.log("calc");
  // console.log(data.length)
+ //console.log(data);
+ console.log(data.length);
+ var tried=0,ac=0,wa=0,ce=0,re=0,other=0,contest=0,tle=0,practice=0,tests=0,other_error=0,max_rank=1,min_rank=200000;
+ //console.log(data);
+ var ia=0,ib=0,ic=0,id=0,ie=0,iff=0,ig=0,ih=0;
   for(i=0;i<data.length;i++)
   {
       var j;
@@ -13,8 +18,19 @@ calc=(data)=>{
       
       if(data[i].problem&&data[i].problem.rating)
       {
+        if(data[i].verdict==='TIME_LIMIT_EXCEEDED')
+          tle++;
+        if(data[i].verdict==='RUNTIME_ERROR')
+          re++;
+        if(data[i].verdict==='COMPILATION_ERROR')
+          ce++;
+        if(data[i].verdict==='WRONG_ANSWER')
+          wa++;
+
           if(data[i].problem.index&&data[i].verdict==='OK')
           {
+            ac++;
+           
 
           // console.log(1);
          
@@ -23,7 +39,9 @@ calc=(data)=>{
              index:data[i].problem.index,
             rating:data[i].problem.rating,
               tags:data[i].problem.tags,
-              time:data[i].creationTimeSeconds
+              time:data[i].creationTimeSeconds,
+              index:data[i].problem.index,
+              name:data[i].problem.name
           }
           var flag=1;
           for(j=0;j<ans.length;j++)
@@ -31,23 +49,80 @@ calc=(data)=>{
               if(temp.contestId==ans[j].contestId&&temp.index==ans[j].index)
                   {
                       flag=0;
+                      
                       break;
                   }
           }
           if(flag)
+          {
+            if(data[i].author.participantType==='CONTESTANT')
+                      contest++;
+                    else
+                      practice++;
               ans.push(temp);
+              if(temp.index==='A')
+                ia++;
+              if(temp.index==='B')
+                ib++;
+              if(temp.index==='C')
+                ic++;
+              if(temp.index==='D')
+                id++;
+              if(temp.index==='E')
+                ie++;
+              if(temp.index==='F')
+                iff++;
+              if(temp.index==='G')
+                ig++;
+              if(temp.index==='H')
+                ih++;
+              
+          }
+             
         }
       }
   
   }
-  
+  var oth=data.length-(ac+tle+ce+re+wa);
+  var error_type={
+    wa:wa,
+    tle:tle,
+    ac:ac,
+    ce:ce,
+    re:re,
+    oth:oth
+  }
+  console.log(error_type);
+
+  var solve_type={
+    practice:practice,
+    contest:contest
+  }
+
+var problem_type={
+  a:ia,
+  b:ib,
+  c:ic,
+  d:id,
+  e:id,
+  f:iff,
+  g:ig,
+  h:ih
+}
+
+  console.log(solve_type);
+  // for(i=ans.length-1;i>=0&&i>=ans.length-10;i--)
+  // {
+  //   console.log(ans[i])
+  // }
+  console.log(problem_type);
   var maths=["math","probabalities","combinatorics","number theory","geometry"]//3
   var greedy=["greedy"]//4
   var dp=["dp"]//1
   var graph=["graphs","dfs and similar","flows","shortest paths","trees"]//2
   //console.log(ans);
   // console.log(data);
-
+console.log(ans.length);
   i=0;
   //graph ....
   var m=0,g=0,d=0,gre=0,mi=0;
@@ -327,7 +402,10 @@ calc=(data)=>{
   var obj={
     g1:gr,
     g2:g2,
-    total:ans.length
+    total:ans.length,
+    error_type:error_type,
+    problem_type:problem_type,
+    solve_type:solve_type
   }
 
   return obj;
