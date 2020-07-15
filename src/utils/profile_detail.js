@@ -34,7 +34,10 @@ request({url:url,json:true},(error,response)=>{
            var obj={
                handle:ob[0].handle,
                rating:ob[0].rating,
-               maxrating:ob[0].maxRating
+               maxrating:ob[0].maxRating,
+               contribution:ob[0].contribution,
+               friends:ob[0].friendOfCount,
+               lastonline:ob[0].lastOnlineTimeSeconds
 
            }
    

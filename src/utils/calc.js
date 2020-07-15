@@ -18,6 +18,7 @@ calc=(data)=>{
       
       if(data[i].problem&&data[i].problem.rating)
       {
+        tried++;
         if(data[i].verdict==='TIME_LIMIT_EXCEEDED')
           tle++;
         if(data[i].verdict==='RUNTIME_ERROR')
@@ -405,7 +406,8 @@ console.log(ans.length);
     total:ans.length,
     error_type:error_type,
     problem_type:problem_type,
-    solve_type:solve_type
+    solve_type:solve_type,
+    tried:tried
   }
 
   return obj;

@@ -44,7 +44,11 @@ app.get('', (req, res) => {//default page
         console.log(data.object2.g1)
         //     console.log(data.object2.g1);
          var col=["hello"];
-     
+         var utcSeconds = data.object1.lastonline;
+        var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+        d.setUTCSeconds(utcSeconds);
+        console.log(d);
+         
         var val = {
 
             handle: data.object1.handle,
@@ -54,6 +58,10 @@ app.get('', (req, res) => {//default page
             solve_type:data.object2.solve_type,
             problem_type:data.object2.problem_type,
             error_type:data.object2.error_type,
+            friends:data.object1.friends,
+            contribution:data.object1.contribution,
+            tried:data.object2.tried,
+
             
             g1: {
                 a1: data.object2.g1,
