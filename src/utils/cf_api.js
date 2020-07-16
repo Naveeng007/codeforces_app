@@ -39,6 +39,7 @@ request({url:url,json:true},(error,response)=>{
       profile_detail(ur,(obj)=>
        {
         var obj1= calc(response.body.result);
+        
         var val={
             object1:obj,
             object2:obj1
