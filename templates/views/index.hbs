@@ -28,11 +28,15 @@
 
 
       var ag1 = Array({{ g1.a1 }})
+      var index=1;
     console.log(ag1)
-    graph1[1] = new Array('<1100', ag1[0], ag1[1], ag1[2], ag1[3], ag1[4]);
-    graph1[2] = new Array('1100-1500', ag1[5], ag1[6], ag1[7], ag1[8], ag1[9])
-    graph1[3] = new Array('1600-2000', ag1[10], ag1[11], ag1[12], ag1[13], ag1[14])
-    graph1[4] = new Array('>2100', ag1[15], ag1[16], ag1[17], ag1[18], ag1[19])
+    graph1[index++] = new Array('<1100', ag1[0], ag1[1], ag1[2], ag1[3], ag1[4]);
+    if(ag1[5]|| ag1[6]|| ag1[7]|| ag1[8]|| ag1[9])
+    graph1[index++] = new Array('1100-1500', ag1[5], ag1[6], ag1[7], ag1[8], ag1[9])
+    if(ag1[10]||ag1[11]||ag1[12]||ag1[13]|| ag1[14])
+    graph1[index++] = new Array('1600-2000', ag1[10], ag1[11], ag1[12], ag1[13], ag1[14])
+    if(ag1[15]||ag1[16]||ag1[17]|| ag1[18]|| ag1[19])
+    graph1[index++] = new Array('>2100', ag1[15], ag1[16], ag1[17], ag1[18], ag1[19])
 
     var g1 = graph1;
 
@@ -44,6 +48,8 @@
       legend: { position: 'none' },
       hAxis: { title: 'Ratings of problems' },
       vAxis: { title: 'Number of Problems solved' },
+     
+      
       // isStacked: true,
       // is3D:true
 
@@ -98,10 +104,10 @@
       //var ag2 = Array({{ g1.a2 }})
     var graph1 = new Array()
     graph1[0] = new Array("Name", "Error");
-    graph1[1] = new Array("Wrong Answer", {{error_type.wa}})
-    graph1[2] = new Array("TLE", {{error_type.tle}})
-    graph1[3] = new Array("AC", {{error_type.ac}})
-    graph1[4] = new Array("Compilation error", {{error_type.ce}})
+    graph1[1] = new Array("TLE", {{error_type.tle}})
+    graph1[2] = new Array("Wrong Answer", {{error_type.wa}})
+    graph1[3] = new Array("Compilation error", {{error_type.ce}})
+    graph1[4] = new Array("Ac", {{error_type.ac}})
     graph1[5] = new Array("Runtime Error", {{error_type.re}})
     graph1[6] = new Array("Other", {{error_type.oth}})
     //  console.log(g2)
@@ -129,17 +135,26 @@
     google.charts.setOnLoadCallback(drawChart1);
 
     function drawChart1() {
-      var ag2 = Array({{ g1.a2 }})
+     var index=0;
     var graph1 = new Array()
-    graph1[0] = new Array("Name", "Problem",{ role: 'style' });
-    graph1[1] = new Array("Problem A", {{problem_type.a}},'#ff7a7a')
-    graph1[2] = new Array("Problem B", {{problem_type.b}},'#eed853')
-    graph1[3] = new Array("Problem C", {{problem_type.c}},'#4acec4')
-    graph1[4] = new Array("Problem D", {{problem_type.d}},'#91eabb')
-    graph1[5] = new Array("Problem E", {{problem_type.e}},'#b87333')
-    graph1[6] = new Array("Problem F", {{problem_type.f}},'#bf1f2e')
-    graph1[7] = new Array("Problem G", {{problem_type.g}},'Pink')
-    graph1[7] = new Array("Problem H", {{problem_type.h}},'Red')
+    graph1[index++] = new Array("Name", "Problem",{ role: 'style' });
+    graph1[index++] = new Array(" A", {{problem_type.a}},'#ff7a7a')
+    if({{problem_type.b}})
+    graph1[index++] = new Array(" B", {{problem_type.b}},'#eed853')
+    if({{problem_type.c}})
+    graph1[index++] = new Array(" C", {{problem_type.c}},'#4acec4')
+    if({{problem_type.d}})
+    graph1[index++] = new Array(" D", {{problem_type.d}},'#91eabb')
+    if({{problem_type.e}})
+    graph1[index++] = new Array(" E", {{problem_type.e}},'#b87333')
+    if({{problem_type.f}})
+    graph1[index++] = new Array(" F", {{problem_type.f}},'pink')
+    
+     if({{problem_type.g}})
+    graph1[index++] = new Array(" G", {{problem_type.g}},'#bf1f2e')
+     if({{problem_type.h}})
+    graph1[index++] = new Array(" H", {{problem_type.h}},'Red')
+    
     //  console.log(g2)
     var g2 = graph1;
     console.log(g2)
@@ -172,7 +187,7 @@
     var graph1 = new Array()
     graph1[0] = new Array("Name", "Solved Questions Type");
     graph1[1] = new Array("During Contest", {{solve_type.contest}})
-    graph1[2] = new Array("Practiced after contest", {{solve_type.practice}})
+    graph1[2] = new Array("Practiced after contest", {{solve_type.practice}},)
    
     //  console.log(g2)
     var g2 = graph1;
@@ -181,7 +196,8 @@
 
     var options = {
       //   title: 'Topic wise Problems solved',
-
+       
+      colors: ['#ff7a7a', '#4acec4'],
       is3D: true
     };
 
@@ -376,13 +392,13 @@
 
                   <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Rating wise problems solved </div>
 
-                  <div id="chart_div"><canvas id="myAreaChart" width="100%" height="500%"></canvas></div>
+                  <div id="chart_div"><canvas id="myAreaChart" width="700px" height="500%"></canvas></div>
 
                 </div>
 
                 <div class="card mb-6">
 
-                  <div class="card-header"><i class="fas fa-chart-area mr-1"></i>problem_type</div>
+                  <div class="card-header"><i class="fas fa-chart-area mr-1"></i>problem type</div>
                   <div id="problem_type" style="width: 100%; height: 500px;"></div>
 
                 </div>
